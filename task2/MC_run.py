@@ -7,7 +7,7 @@ import math
 
 
 # Function for generate one episode
-def one_episode(env, RL):
+def one_episode():
     episode_sar = []                  # store (s,a,r) of each episode
     s = env.reset()                   # initial observation
 
@@ -41,7 +41,7 @@ def one_episode(env, RL):
     return episode_sar, t, num_success, success_steps, steps
 
 
-def iteration(epi_num, env, RL):
+def iteration(epi_num):
     # All the return(St,At)
     returns = {(s, a): [] for s, a in product(env.state_space, env.action_space)}
 
@@ -58,7 +58,7 @@ def iteration(epi_num, env, RL):
         sa_pairs = []
 
         # run every episode
-        episode_sar, t, num_success, success_steps, steps = one_episode(env, RL)
+        episode_sar, t, num_success, success_steps, steps = one_episode()
         sag_list = RL.get_sag(episode_sar)  # transfer (s,a,r) to (s,a,G)
 
         t_ += t                                      # summed time
@@ -77,7 +77,8 @@ def iteration(epi_num, env, RL):
                 returns[sa].append(G)                             # append the current G value to the first-visit (s,a) during each episode, which will be an array
                 RL.q_table.loc[str(s), a] = np.mean(returns[sa])  # Q value will be the empirical mean return
                 sa_pairs.append(sa)                               # supplement the appeared (s,a)
-    return steps_, success_rate_change
+    # return steps_, success_rate_change
+
     # end of training
     print('----------This is the end of Monte Carlo training after', epi_num, 'episode----------')
     print('Sum of running time:', t_, 's')
