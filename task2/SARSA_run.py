@@ -54,7 +54,8 @@ def iteration(epi_num):
                 success_rate_change += [num_success / now * 100]  # get the success rate in real time
                 print(now, '/', epi_num)                    # show which episode of training is in
                 break
-    return steps, success_rate_change
+    # return steps, success_rate_change
+    
     # end of training
     print('----------This is the end of SARSA training after', epi_num, 'episode----------')
     print('Sum of running time:', t, 's')
