@@ -3,7 +3,7 @@
 This is a coursework project of ME5406 (Deep Learning in Robotics) in NUS.<br>
 The project aims to solve the `Frozen Lake Problem` which contains two tasks via model-free reinforcement learning approaches. 
 The Frozen Lake problem considers a frozen lake as a grid-world scenario that a robot is to glide on the frozen surface from the top left corner to the bottom right corner in order to pick up a frisbee while avoiding falling into holes covered by patches of very thin ice.<br>
-![](https://github.com/Lil-Jie/ME5405_project1/raw/master/)
+![](https://github.com/Lil-Jie/ME5405_project1/raw/master/task1/img/4x4 Frozen Lake.png)
 
 ## Install
 The below shows some of the packages required in this project.
