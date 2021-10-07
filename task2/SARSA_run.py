@@ -4,7 +4,7 @@ import time
 import math
 
 
-def iteration(epi_num, env, RL):
+def iteration(epi_num):
     # parameters to evaluate the performance of the algorithm
     steps = []                  # record the steps of each episode
     success_steps = []          # record the steps of each success episode
